@@ -1,0 +1,13 @@
+{
+    "go.lintOnSave": "off",
+    "go.vetOnSave": "off",
+    "problems.showCurrentInStatus": false,
+    "problems.autoReveal": false,
+    "go.toolsManagement.checkForUpdates": "off",
+    "files.exclude": {
+        "**/go/pkg/mod/**": true
+    },
+    "search.exclude": {
+        "**/go/pkg/mod/**": true
+    }
+}

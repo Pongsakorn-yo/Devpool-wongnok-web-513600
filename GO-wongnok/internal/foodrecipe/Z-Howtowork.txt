@@ -1,0 +1,3 @@
+1 call NewHandler(db) ---> return Handler struct ---> inside Handler struct call NewService(db) ---> return Service struct  ---> inside Handler struct call NewRepositrry(db) ---> save to database 
+
+when return NewService(db) if use (handler IHandler) form method can use handler.service.create if return Repository you must call newservice all time and send db all time

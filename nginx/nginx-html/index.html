@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <        <div class="links">
+            <a href="/admin" target="_blank">Authentication Admin (Keycloak)</a>
+            <a href="/realms/Devpool_project/account/" target="_blank">My Account</a>
+            <a href="/api/v1/food-recipes" target="_blank">API: Food Recipes</a>
+            <a href="/api/v1/login" target="_blank">Login</a>
+        </div> charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wongnok Food Recipe Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .links {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .links a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .links a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Wongnok Food Recipe Platform</h1>
+        <p>This is the main landing page for the Wongnok food recipe application.</p>
+        
+        <div class="links">
+            <a href="/admin" target="_blank">Authentication (Keycloak)</a>
+            <a href="/api/health" target="_blank">API Health Check</a>
+        </div>
+        
+        <h2>Services Status</h2>
+        <ul>
+            <li>Nginx Proxy: Running on port 80</li>
+            <li>Keycloak: Available at /auth</li>
+            <li>PostgreSQL: Database backend</li>
+            <li>Go API: Available at /api</li>
+        </ul>
+    </div>
+</body>
+</html>

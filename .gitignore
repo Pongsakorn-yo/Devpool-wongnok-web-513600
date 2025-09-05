@@ -1,0 +1,39 @@
+# Database data
+postgres/postgres-data/
+
+
+#next-wongnok
+next-wongnok/node_modules/
+wongnok-web/node_modules/
+
+# Logs
+*.log
+logs/
+
+# Next.js build output
+Devpool-wongnok-web-513600/wongnok-web/.next/
+Devpool-wongnok-web-513600/wongnok-web/node_modules/
+Devpool-Project1-old/wongnok-web/.next/
+Devpool-Project1-old/wongnok-web/node_modules/
+**/.next/
+
+# Environment files
+# .env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,92 @@
+สรุปผลงานรอบ MID-TERM (30 Aug – 6 Sep 2025)
+================================================
+
+บริบทโดยสรุป
+- โครงสร้าง: Next.js (App Router) + React + TypeScript + Tailwind CSS + React Query + NextAuth (Keycloak)
+- งานหลักในรอบนี้: เพิ่ม/ปรับ UI/Flow สำหรับ Profile, Favorite Recipe, Router Guard และเก็บรายละเอียดเป็นคอมเมนต์ภาษาไทยในโค้ด พร้อมเกลาโค้ดให้กระชับและลดไฟล์ที่ไม่จำเป็น
+
+เน้นหัวข้อ MID-TERM ตามสไลด์
+1) Profile
+- ความสามารถ:
+  • แสดงข้อมูลผู้ใช้: Avatar, Name, Nickname
+  • อนุญาตให้แก้ไข Nickname และ Avatar URL พร้อมตรวจสอบความถูกต้องของ URL
+  • ปุ่ม Save เปิดใช้งานเมื่อข้อมูลถูกต้องเท่านั้น มีข้อความแจ้งผลสำเร็จ/ผิดพลาด
+  • บังคับล็อกอิน: หากยังไม่ล็อกอินจะนำไปหน้า Sign-in
+- ไฟล์เกี่ยวข้องหลัก:
+  • src/app/my-profile/page.tsx — หน้าโปรไฟล์ + validation + การเรียก API (getUser, UpdateUser)
+  • src/services/recipe.service.ts — ฟังก์ชัน getUser, UpdateUser และ type User
+  • src/components/Navbar.tsx — แสดงชื่อเล่น/รูปผู้ใช้ในเมนู และลิงก์ไปยังหน้าโปรไฟล์
+- หมายเหตุเชิงเทคนิค:
+  • ใช้ NextAuth (JWT) เพื่อดึง token ไปเรียก API ฝั่ง GO ผ่าน axios instance
+  • มีคอมเมนต์ภาษาไทยอธิบาย flow และข้อควรระวังในแต่ละจุด
+
+2) Favorite Recipe
+- ความสามารถ:
+  • ผู้ใช้ที่ล็อกอินสามารถเพิ่ม/ลบสูตรอาหารเป็นรายการโปรด (Favorite)
+  • แสดงรายการ Favorite ของผู้ใช้แบบ pagination + ค้นหา (search) พร้อม debounce เพื่อลดภาระเรียก API
+  • ใช้กลยุทธ์ optimistic update สำหรับการลบ: UI ตอบสนองไว แล้วซิงก์ผลกับเซิร์ฟเวอร์
+  • แสดง Favorite badge/ไอคอนหัวใจใน Card ของสูตรอาหารตามสถานะ favorite
+- ไฟล์เกี่ยวข้องหลัก:
+  • src/app/my-favorite/page.tsx — จัดการค้นหา/แบ่งหน้า/ลบแบบ optimistic
+  • src/services/recipe.service.ts — getFavorite, CreateFavorite, DeleteFavorite, fetchRecipesByUser
+  • src/components/CardRecipe.tsx — แสดงไอคอน favorite และค่าเฉลี่ยคะแนน (ถ้ามี)
+- หมายเหตุเชิงเทคนิค:
+  • หน้ารายการ favorite ถูก Router Guard ป้องกัน (ต้องล็อกอิน)
+  • มีคอมเมนต์ภาษาไทยกำกับการทำงานสำคัญ เช่น debounce และการย้อนหน้าเมื่อหน้าปัจจุบันว่าง
+
+3) Router Guard
+- ความสามารถ:
+  • ป้องกันเส้นทางสำคัญ: /create-recipe, /edit-recipe, /my-recipe, /my-profile, /my-favorite
+  • หากไม่พบบัตรผ่าน (token) จะ redirect ไป /auth/signin พร้อม callbackUrl เพื่อพากลับหน้าที่ต้องการหลังล็อกอินสำเร็จ
+- ไฟล์เกี่ยวข้องหลัก:
+  • src/middleware.ts — เรจูลาร์เอ็กซ์เพรสชัน/ matcher และการอ่าน token ด้วย next-auth/jwt
+- หมายเหตุเชิงเทคนิค:
+  • มีคอมเมนต์ภาษาไทยอธิบายเจตนาและเงื่อนไขของ guard อย่างชัดเจน
+
+งานปรับปรุงสำคัญเพิ่มเติมในรอบนี้
+- คะแนนเฉลี่ย (Average Rating) ในหน้าต่างให้คะแนน (Popup)
+  • เพิ่ม badge คะแนนเฉลี่ยที่มุมขวาล่างของ PopupRating และ PopupPermitRating
+  • ค่าคะแนนเฉลี่ยมาจากหน้า recipe details และถูกปัดทศนิยม 1 ตำแหน่ง (toFixed(1)) พร้อมครอบที่ 5.0
+  • ไฟล์หลัก: src/components/Popuprating.tsx, src/components/PopupPermitRating.tsx, src/app/recipe-details/[recipeId]/page.tsx
+- คอมเมนต์ภาษาไทยในโค้ด
+  • เพิ่มคอมเมนต์สรุปแนวคิด/เหตุผลในส่วน Profile, Favorite Recipe, Router Guard, Rating popup, Navbar, และบริการเรียก API
+- เกลาโค้ด/ทำความสะอาด
+  • ลด/ลบไฟล์สืบทอดที่ไม่จำเป็น (เช่น test.txt, ทดสอบเก่า) หรือย่อเนื้อหาให้อยู่ในสภาพไม่รบกวนโปรเจกต์
+  • ปรับ ESLint ให้ไม่ fail บน no-explicit-any (ลดความเข้มเป็น warn) เพื่อไม่บล็อกงาน พร้อมเก็บรายการคำเตือนเพื่อไล่แก้ภายหลัง
+
+ไฟล์/โมดูลที่เกี่ยวข้อง (ตัวอย่างเด่น)
+- src/app/my-profile/page.tsx — หน้าโปรไฟล์: ดึง/แก้ไข Nickname และ Avatar URL
+- src/app/my-favorite/page.tsx — รายการ Favorite (pagination + search + optimistic delete)
+- src/middleware.ts — Router Guard คุ้มครองเส้นทาง
+- src/components/Popuprating.tsx, src/components/PopupPermitRating.tsx — Popup ให้คะแนน + ป้ายคะแนนเฉลี่ย
+- src/app/recipe-details/[recipeId]/page.tsx — ส่งค่า averageRating ให้ popup และแสดงผลรายละเอียด
+- src/components/CardRecipe.tsx — การ์ดสูตรอาหาร แสดงผู้สร้าง, favorite icon, และค่าเฉลี่ย (ถ้ามี)
+- src/services/recipe.service.ts — เลเยอร์เรียก API (recipes/ratings/favorites/users)
+- src/lib/axios.ts — axios instance + การแนบ token (idToken หรือ accessToken)
+- src/components/Navbar.tsx — เมนูโปรไฟล์/โปรด/ออกจากระบบ + แสดงรูป/ชื่อเล่น
+
+วิธีทดสอบอย่างย่อ
+1) ล็อกอินผ่าน Keycloak จากปุ่ม “เข้าสู่ระบบ” (Navbar)
+2) Profile: ไปที่ /my-profile
+   - เห็น Avatar/Name/Nickname; ลองแก้ Nickname และ Avatar URL กด Save (มีข้อความแจ้งสถานะ)
+3) Favorite: ไปที่ /my-favorite?limit=5&page=1
+   - ค้นหา/เปลี่ยนหน้า; ลองลบรายการ จะเห็นการอัปเดตแบบ optimistic
+   - บนการ์ดสูตรอาหาร ไอคอนหัวใจเปลี่ยนตามสถานะ favorite
+4) Router Guard:
+   - ลองเข้า /create-recipe หรือ /my-recipe แบบยังไม่ล็อกอิน ควรถูกพาไปหน้า Sign-in และกลับมาหลังสำเร็จ
+5) คะแนนเฉลี่ยใน Popup:
+   - เปิดหน้า recipe details แล้วกดเปิด popup ให้คะแนน จะเห็นป้ายคะแนนเฉลี่ยที่มุมขวาล่าง
+
+สถานะคุณภาพ (รอบนี้)
+- Lint: ผ่าน (ปรับกฎ no-explicit-any เป็นคำเตือน) เหลือคำเตือนเรื่อง any, useEffect dependency และการใช้ <img> ที่ Next แนะนำให้เปลี่ยนเป็น <Image/>
+- Build/Run: ใช้งานผ่านคอนเทนเนอร์เดิม (มีแจ้งเตือน version ใน compose ซึ่งไม่กระทบการทำงาน)
+
+ข้อเสนอแนะถัดไป (Nice-to-have)
+- ค่อย ๆ ลดการใช้ any และแก้ dependency ของ useEffect ให้ถูกต้อง
+- เปลี่ยน <img> เป็น next/image ในตำแหน่งที่เหมาะสมเพื่อลด LCP/แบนด์วิธ
+- เพิ่มชุดทดสอบพื้นฐาน (unit/integration) ครอบคลุม flow สำคัญ
+- ลบไฟล์ placeholder/deprecated ทิ้งจากระบบไฟล์จริงเมื่อพร้อม
+
+สรุปสั้น
+- ครบตามโจทย์ MID-TERM: Profile (แสดง/แก้ไข), Favorite Recipe (เพิ่ม/ลบ/แสดงแบบแบ่งหน้าและค้นหา), Router Guard (ป้องกันเส้นทางสำคัญ)
+- เพิ่มป้ายคะแนนเฉลี่ยใน popup ตามคำขอเดิม, เสริมคอมเมนต์ภาษาไทยในตำแหน่งสำคัญ, และทำความสะอาดโปรเจกต์เพื่อความกระชับ

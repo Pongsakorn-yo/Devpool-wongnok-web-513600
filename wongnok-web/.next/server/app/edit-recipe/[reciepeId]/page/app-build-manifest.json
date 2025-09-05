@@ -1,0 +1,29 @@
+{
+  "pages": {
+    "/edit-recipe/[reciepeId]/page": [
+      "static/chunks/node_modules_next_dist_01fcdebf._.js",
+      "static/chunks/src_app_favicon_ico_mjs_f9cadd25._.js",
+      "static/chunks/[root-of-the-server]__ba4ce2ff._.css",
+      "static/chunks/node_modules_0b2e79a7._.js",
+      "static/chunks/src_d3363091._.js",
+      "static/chunks/src_app_layout_tsx_68b267f5._.js",
+      "static/chunks/node_modules_next_dist_client_components_builtin_global-error_2ac8fdd1.js",
+      "static/chunks/_8008bd29._.js",
+      "static/chunks/src_app_edit-recipe_layout_tsx_2ac8fdd1._.js",
+      "static/chunks/node_modules_axios_lib_99999129._.js",
+      "static/chunks/node_modules_zod_a8dce1cb._.js",
+      "static/chunks/node_modules_476746d3._.js",
+      "static/chunks/src_489c337e._.js",
+      "static/chunks/src_app_edit-recipe_[reciepeId]_page_tsx_e896c35b._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_6aaa83c7._.js",
+      "static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js",
+      "static/chunks/node_modules_next_dist_compiled_next-devtools_index_d575f738.js",
+      "static/chunks/node_modules_next_dist_compiled_0f1b9fd4._.js",
+      "static/chunks/node_modules_next_dist_client_20b209c9._.js",
+      "static/chunks/node_modules_next_dist_445d8acf._.js",
+      "static/chunks/node_modules_@swc_helpers_cjs_8e433861._.js",
+      "static/chunks/_e69f0d32._.js",
+      "static/chunks/_01f48b92._.js"
+    ]
+  }
+}

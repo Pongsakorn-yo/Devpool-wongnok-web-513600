@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///E:/DevPoolLearning/Devpool-project_fortest/Devpool-Project1/wongnok-web/src/app/my-profile/page.tsx"],"sourcesContent":["const MyProfile = () => {\r\n  return (\r\n    <div>\r\n      {' '}\r\n      <div className='flex justify-between items-center py-8'>\r\n        <h1 className='font-bold text-4xl'>สูตรอาหารของฉัน</h1>\r\n        <Link href={'/create-recipe'}>\r\n          <Button className='bg-primary-500'>​+ สร้างสูตรอาหาร</Button>\r\n        </Link>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default MyProfile\r\n"],"names":[],"mappings":";;;;;AAAA,MAAM,YAAY;IAChB,qBACE,8OAAC;;YACE;0BACD,8OAAC;gBAAI,WAAU;;kCACb,8OAAC;wBAAG,WAAU;kCAAqB;;;;;;kCACnC,8OAAC;wBAAK,MAAM;kCACV,cAAA,8OAAC;4BAAO,WAAU;sCAAiB;;;;;;;;;;;;;;;;;;;;;;;AAK7C;uCAEe","debugId":null}}]
+}

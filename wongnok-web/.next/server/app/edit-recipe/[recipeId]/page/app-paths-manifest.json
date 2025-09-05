@@ -1,0 +1,3 @@
+{
+  "/edit-recipe/[recipeId]/page": "app/edit-recipe/[recipeId]/page.js"
+}

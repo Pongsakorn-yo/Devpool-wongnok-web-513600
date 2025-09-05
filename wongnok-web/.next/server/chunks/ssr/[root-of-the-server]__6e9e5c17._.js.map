@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 19, "column": 0}, "map": {"version":3,"sources":["file:///app/src/app/my-favorite/page.tsx"],"sourcesContent":["const myfavorite = ()=>{\r\n\r\nreturn(<>\r\n<div>\r\n    test\r\n</div>\r\n</>)\r\n}"],"names":[],"mappings":";AAAA,MAAM,aAAa;IAEnB,qBAAO;kBACP,cAAA,QAAC;sBAAI;;;;;;;AAIL","debugId":null}}]
+}

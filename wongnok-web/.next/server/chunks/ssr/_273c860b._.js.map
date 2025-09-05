@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["file:///app/src/app/edit-recipe/layout.tsx"],"sourcesContent":["'use client'\r\n\r\nimport { Button } from '@/components/ui/button'\r\nimport { useRouter } from 'next/navigation'\r\n\r\nconst RecipeDetailsLayout = ({ children }: { children: React.ReactNode }) => {\r\n  const router = useRouter()\r\n  return (\r\n    <div>\r\n      <Button\r\n        variant='outline'\r\n        className='text-primary-500 my-8 border-primary-500 cursor-pointer'\r\n        onClick={() => router.back()}\r\n      >\r\n        กลับ\r\n      </Button>\r\n      {children}\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default RecipeDetailsLayout\r\n"],"names":[],"mappings":";;;;AAEA;AACA;AAHA;;;;AAKA,MAAM,sBAAsB,CAAC,EAAE,QAAQ,EAAiC;IACtE,MAAM,SAAS,CAAA,GAAA,kIAAA,CAAA,YAAS,AAAD;IACvB,qBACE,8OAAC;;0BACC,8OAAC,kIAAA,CAAA,SAAM;gBACL,SAAQ;gBACR,WAAU;gBACV,SAAS,IAAM,OAAO,IAAI;0BAC3B;;;;;;YAGA;;;;;;;AAGP;uCAEe","debugId":null}},
+    {"offset": {"line": 43, "column": 0}, "map": {"version":3,"sources":["file:///app/node_modules/next/navigation.js"],"sourcesContent":["module.exports = require('./dist/client/components/navigation')\n"],"names":[],"mappings":"AAAA,OAAO,OAAO","ignoreList":[0],"debugId":null}}]
+}

@@ -1,0 +1,49 @@
+{
+  "version": 3,
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/_73e086de._.js",
+        "server/edge/chunks/[root-of-the-server]__dc15d093._.js",
+        "server/edge/chunks/edge-wrapper_bbcb1769.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/create-recipe(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/create-recipe/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/edit-recipe(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/edit-recipe/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/my-recipe(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/my-recipe"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/my-profile(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/my-profile"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/my-favorite(\\\\.json)?[\\/#\\?]?$",
+          "originalSource": "/my-favorite"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "nU8I10aFRkyG6tnVWfWA7paRjgCgr8sUGEkCuqWt1aY=",
+        "__NEXT_PREVIEW_MODE_ID": "53b403c7f408ff8ce59c18adbe054a2f",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "a425974af60e0f9c5b923edbd5e6280ab5390342ff4b41127c4e8f946a9c7eed",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "1ce4556977dbfed05bd7daa6482d5872f98c8480a0acd8c11064d2ec83a8252c"
+      }
+    }
+  },
+  "sortedMiddleware": [
+    "/"
+  ],
+  "functions": {}
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 21, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/middleware.ts"],"sourcesContent":["export { default } from 'next-auth/middleware'\n\nexport const config = {\n  matcher: ['/my-recipe/:path*', '/my-favorite/:path*', '/my-profile/:path*', '/create-recipe/:path*']\n}"],"names":[],"mappings":";;;AAAA;;AAEO,MAAM,SAAS;IACpB,SAAS;QAAC;QAAqB;QAAuB;QAAsB;KAAwB;AACtG"}}]
+}

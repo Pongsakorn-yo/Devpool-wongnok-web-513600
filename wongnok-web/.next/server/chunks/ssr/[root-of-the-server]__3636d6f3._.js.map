@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///app/src/app/%5B...slug%5D/page.tsx"],"sourcesContent":["type SlugProps = {\n  params: Promise<{\n    slug: string\n  }>\n}\n\nconst RecipeDetailsId = async ({ params }: SlugProps) => {\n  const { slug } = await params\n  return <div>this is slug file {slug}</div>\n}\n\nexport default RecipeDetailsId\n"],"names":[],"mappings":";;;;;AAMA,MAAM,kBAAkB,OAAO,EAAE,MAAM,EAAa;IAClD,MAAM,EAAE,IAAI,EAAE,GAAG,MAAM;IACvB,qBAAO,8OAAC;;YAAI;YAAmB;;;;;;;AACjC;uCAEe","debugId":null}}]
+}
